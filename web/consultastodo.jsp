@@ -1,19 +1,12 @@
-<%-- 
-    Document   : consultastodo
-    Created on : 8/06/2015, 12:11:14 PM
-    Author     : Alumno
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8" import="java.io.*,java.sql.*"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css.css" media="screen"/>
-        <title>JSP Page</title>
+        <title>Registros</title>
     </head>
     <body id="a">
-    <form action="as.html" method="get">
         <div class="d">
         <%
             Connection c= null;
@@ -25,16 +18,14 @@
                 c= DriverManager.getConnection("jdbc:mysql://localhost/datos","root","n0m3l0");
                 s = c.createStatement();
                 }
-            catch(SQLException  error)
-            {
-                out.println(error.toString());
+            catch(SQLException  error){
+                System.out.println(error.toString());
             }
             try{
                 String queryStr = "select*from datos";
                 PreparedStatement pstmt = c.prepareStatement(queryStr);
            
                 r = pstmt.executeQuery();
-                out.println("<script>alert('consulta exitosa.')</script>");
                 while(r.next()){
                     String cad1 = r.getString("columna1");
                     String cad2 = r.getString("columna2");
@@ -45,8 +36,6 @@
                     String cad7 = r.getString("columna7");
                     String cad8 = r.getString("columna8");
                     String cad9 = r.getString("columna9");
-                     out.println("<br>");
-                    out.println("----------------------------------------");
                     out.println("<br>");
                     out.println("Nombre: "+cad1);
                      out.println("<br>");
@@ -69,11 +58,21 @@
                 }
             }
             catch(SQLException error){
-                out.print(error.toString());
+                System.out.print(error.toString());
             }
             %>
-            <input type="submit" value="Menu" >
+            <input type="button" value="Volver al menu" onclick="window.location.href='/miformu/'">
         </div>
-    </form>
     </body>
 </html>
+<!--
+Lista de cambios:
+-Redirecciones corregidas (Usa un boton con funcion javascript, es mas eficiente)
+-Codigo optimizado
+-Mejoras de rendimiento (No es necesario importar java.io)
+-Mejoras de importaciones 
+-Bajas funcional (Incluido dentro de consultas)
+-Mejoradas excepciones (En caso de excepcion, busca en la pestaña de GlassFish)
+-Incluido archivo de script dentro del proyecto
+-Corregido pagina de inicio (Ya inicia en as.html
+-->

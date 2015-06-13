@@ -9,7 +9,6 @@
     </head>
     <body>
         <%
-             
            String name, ape, r, sex, contra, fech,dom, mail, suel;
             name = request.getParameter("nom");
             ape = request.getParameter("ape");
@@ -25,8 +24,7 @@
             bd.conexion();
             bd.altas(name,ape,r,contra,sex,fech, mail, dom, suel);
             bd.cerrar();
-            response.sendRedirect("/miformu/as.html");
-            
+            response.sendRedirect("/miformu/");
         %>
         <br><br><h1>ALGO DE POR AQUI</h1>
     </body>

@@ -149,11 +149,11 @@
             }
        </script>
     </head>
-    <body style="float : left ; display : table; width: 100% ; height: 100%; background-color: orange">
+    <body style="float: left; display: table; width: 100%; height: 100%; background-color: orange">
         <form  name="formulario" id="formu" onSubmit= "return Desplegar(this)" method="post" action="altas.jsp">
-	<div style =" float : left ; display : table; width: 100% ; height: 100%">
+	<div style =" float: left; display: table; width: 100%; height: 100%;">
         <div id="div1">
-              <h2 align="center"> Bienvenido</h2>
+              <h2 align="center">Bienvenido</h2>
                 <hr size="5" width="75%" color="lawngreen">
                 <h2 id="nombresito">Nombre(s): </h2>
                 <input type="text"  name="nom" id="nombre" required onkeyPress="return Validaletra(event)"/>
@@ -162,7 +162,7 @@
                 <input type="text" name="ape" id="apellido" required onkeyPress="return Validaletra(event)"/>
                 <br>
                 <br>
-                <h2 id="r" >RFC: </h2>
+                <h2 id="r">RFC: </h2>
                 <input type="text" id="rfc" name="r" required onkeyPress="return Validanum(event)"/>
                 <br>
                 <h2 id="con">Contraseña: </h2>
@@ -174,7 +174,6 @@
                 <br>
                 <input type="radio" name="sex" id="sex2" value="Masculino"/>
                 Masculino
-                
 	</div>
 	<div id="div2">
                 <h2 id="fecha">Fecha de nacimiento</h2>
@@ -209,35 +208,24 @@
                 <br>
                 <h2 id="do">Domicilio: </h2>
                 <input type="text"  id="comment" name="comment">
-                
                 <br>
                 <h2 id="hola">Sueldo:</h2>
 		<input type="text" name="numero" id="num" maxlength="6" onkeyup="nn(document.getElementById('num').value);">
-		<br><br>
+		<br>
 		<h2 id="gola">Letras: </h2>
 		<input type="text" id="costo" name="letra" disabled="disabled" style="width: 400px"/>
-                <br><br>
+                <br>
                 <input type="submit" name="guardar" value="Dar de Alta">
-                <br><br>
-                
-           
         </form>
+        <h2>Consultas y bajas</h2>
         <form name="consultas" action="consultas.jsp" method="post">
             <input type="text" id="busca1" name="busca">
-            <input type="submit" name="buscar" value="Buscar">
+            <input type="submit" value="Buscar">
         </form>
         <form name="consultastodo" action="consultastodo.jsp" method="post">
-            <br><br>
             <input type="submit" name="registro" value="Registros existentes">
         </form>
-        
-         </div>
-            <form name="borarr" action="consultasb.jsp" method="post">
-            <br><br>
-            <h2>RFC: </h2>
-            <input type="text" name="cuadro">
-            <input type="submit" name="borrar1" value="Borrar">
-        </form>
+        </div>
 	</div>
     </body>
 </html>

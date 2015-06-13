@@ -1,9 +1,3 @@
-<%-- 
-    Document   : consultitas
-    Created on : 8/06/2015, 12:38:08 PM
-    Author     : Alumno
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8" import="base.Base"%>
 <!DOCTYPE html>
 <html>

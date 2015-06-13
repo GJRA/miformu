@@ -1,19 +1,12 @@
-<%-- 
-    Document   : consultas
-    Created on : 3/06/2015, 08:32:34 PM
-    Author     : arturo
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8" import="base.Base"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
          <link rel="stylesheet" type="text/css" href="css.css" media="screen"/>
-        <title>JSP Page</title>
+        <title>Consultas</title>
     </head>
     <body id="g">
-        <form action="as.html" method ="get">
         <div class="j">
         <%
             
@@ -36,7 +29,11 @@
             out.print("<h2>"+"Sueldo:   "+datos[8]+"</h2>");
            
         %>
-        <input type="submit" value="Menu">
+        <input type="button" value="Volver al menu" onclick="window.location.href='/miformu/'">
+        <form id="borrar" action="borrar.jsp" method="get">
+            <input type="text" name="rfc" value="<%out.println(datos[2]);%>" hidden>
+            <input type="submit" value="Borrar a la persona">
+        </form>
         </div>
         </form>
     </body>
