@@ -1,0 +1,93 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2/06/2015, 07:40:53 PM
+    Author     : arturo
+*/
+
+#t{
+    alignment-adjust: central;
+    color : orange;
+}
+#nombresito{
+    color:#01DFA5;
+}
+#apell{
+    color:#B40431;
+}
+#r{
+    color:#B404AE;
+}
+#con{
+    color:#0489B1;
+}
+#s{
+    color:#01DFA5;
+}
+#fecha{
+    color:#00BFFF;
+}
+#co{
+    color:#00FFFF;
+}
+#do{
+    color:#FF00FF;
+}
+#gola{
+    color:#FF00BF;
+}
+#hola{
+    color:#FE2E64;
+}
+#div1{
+    background-image: url(img1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    float: left; width: 50% ; height: 100%;
+}
+#div2{
+    float : left ; width: 50% ; height: 100%;
+    background-image: url(img2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+#g{
+    background-image: url(img.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+h2{
+    color: #00BFFF;
+}
+div.j{
+    position: absolute;
+    top:50%;
+    left:50%;
+    width:50%;
+    margin-left:-25%;
+    height:75%;
+    margin-top:-25%;
+    opacity: .5;
+    background-color: black;
+    alignment-adjust: central;
+}
+div.d{
+    position: absolute;
+    left:50%;
+    width:50%;
+    margin-left:-25%;
+    margin-right: -25%;
+    height:100%;
+    opacity: .5;
+    background-color: black;
+    alignment-adjust: central;
+}
+#a{
+    background-image: url(img4.jpg);
+    background-position: center;
+    background-repeat: repeat;   
+}

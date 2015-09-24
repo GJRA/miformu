@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prueba</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css.css" media="screen"/>
+        <script type="text/javascript">
+			var unidades =['','uno','dos','tres','cuatro','cinco','seis','siete','ocho','nueve'];
+            var dieces =['','once','doce','trece','catorce','quince','diecisies','diecisiete','dieciocho','diecinueve'];
+            var veintes =['','ventiuno','ventidos','ventitres','venticuatro','venticinco','ventiseis','ventisiete','ventiocho','ventinueve'];
+            var decenas =['','diez','veinte','treinta','cuarenta','cincuenta','sesenta','setenta','ochenta','noventa'];
+            var centenas=['','ciento','doscientos','trescientos','cuatrocientos','quinientos','seiscientos','setescientos','ochocientos','novecientos'];
+            var miles=['','mil','dos mil','tres mil','cuatro mil','cinco mil', 'seis mil','siete mil','ocho mil', 'nueve mil'];
+            var diezmiles=['','diez mil','veinte mil','treinta mil','cuarenta mil','cincuenta mil','sesenta mil','setenta mil','ochenta mil','noventa mil'];
+            var veintesmil=['','ventiun','ventidos','ventitres','venticuatro','venticinco','ventiseis','ventisiete','ventiocho','ventinueve'];
+            var unidadesmil=['','un','dos','tres','cuatro','cinco','seis','siete','ocho','nueve'];
+        	delegacion = new Array();
+            delegacion[0] = new Array();
+            delegacion[1] = new Array('Colonia:', '1', '2');
+            delegacion[2] = new Array('Colonia:', '3', '4', '5');
+            delegacion[3] = new Array('Colonia:', '6', '7');
+            delegacion[4] = new Array('Colonia:', '8', '9');
+            delegacion[5] = new Array('Colonia:', '10', '11');
+            delegacion[6] = new Array('Colonia:', '12', '13');
+            delegacion[7] = new Array('Colonia:', '14', '15');
+            delegacion[8] = new Array('Colonia:', '16', '17');
+            delegacion[9] = new Array('Colonia:', '18', '19');
+            delegacion[10] = new Array('Colonia:', '20', '21');
+            delegacion[11] = new Array('Colonia:', '22', '23');
+            delegacion[12] = new Array('Colonia:', '24', '25');
+            delegacion[13] = new Array('Colonia:', '26', '27');
+            delegacion[14] = new Array('Colonia:', '28', '29');
+            delegacion[15] = new Array('Colonia:', '30', '31');
+            delegacion[16] = new Array('Colonia:', '32', '33');
+			
+			var unidades = ['', 'uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve'];
+            var dieces = ['', 'once', 'doce', 'trece', 'catorce', 'quince', 'dieciseis', 'diecisiete', 'dieciocho', 'diecinueve'];
+            var veintes = ['', 'ventiuno', 'veintidos', 'veintitres', 'veinticuatro', 'veinticinco', 'veintiseis', 'veintisiete', 'veintiocho', 'veintinueve'];
+            var decenas = ['', 'diez', 'veinte', 'treinta', 'cuarenta', 'cincuenta', 'sesenta', 'setenta', 'ochenta', 'noventa'];
+            var cienes = ['', 'ciento', 'doscientos', 'trecientos', 'cuatrocientos', 'quinientos', 'seiscientos', 'sietecientos', 'ochocientos', 'novecientos'];
+			
+            
+            function cambiar(formulario) {
+                var i = 0;
+                var select1 = formulario['D1'];
+                var select2 = formulario['D2'];
+                var vector = delegacion[select1.selectedIndex];
+                if (vector.length)
+                    select2.length = vector.length;
+                while (vector[i]) {
+                    select2.options[i].value = vector[i];
+                    select2.options[i].text = vector[i];
+                    i++;
+                }
+                select2.options[0].selected = 1;
+            }
+            function Desplegar(){
+
+                var nombre = document.getElementById("nombre").value;
+                var apellido = document.getElementById("apellido").value;
+                var Femenino = document.getElementById("sex1").checked;
+                var Masculino = document.getElementById("sex2").checked;
+                var correo = document.getElementById("correo").value;
+                var domicilio = document.getElementById("comment").value;
+                var fecha = document.getElementById("dian").value;
+                var del = document.getElementById("D1").value;
+                var col = document.getElementById("D2").value;
+                var cla = document.getElementById("clave").value;
+                var r = document.getElementById("rfc").value;
+
+	                if(Femenino== true){
+	                	if(del !== "Delegacion:"){
+	                		if (col !== "Colonia:"){
+	                			alert("La informacion obtenida ha sido la siguiente:" + "\n" + "Nombre: " + nombre + "\n" + "Apellido: " + apellido + "\n" + "Clave: "+ cla + "\n" + "RFC: "+r + "\n"+"Sexo: Femenino" + "\n" + "Fecha de nacimiento " + fecha + "\n" + "correo: " + correo + "\n" + "Delegación: " + del + "\n" + "Colonia: " + col + "\n" + "Domicilio: " + domicilio);
+	                		}else{
+	                			alert("Selecciona una Colonia correctamente.");
+	                		}
+	                	}else{
+	                		alert("Selecciona una Delegación correctamente.")
+	                	}
+	                }else{
+	                	if(Femenino==false && Masculino == true){
+	                		if(del !== "Delegacion:"){
+	                		if (col !== "Colonia:"){
+	                			alert("La informacion obtenida ha sido la siguiente:" + "\n" + "Nombre: " + nombre + "\n" + "Apellido: " + apellido + "\n" + "Clave: "+ cla + "\n" + "RFC: "+r + "\n"+ "Sexo: Masculino" + "\n" + "Fecha de nacimiento " + fecha + "\n" + "correo: " + correo + "\n" + "Delegación: " + del + "\n" + "Colonia: " + col + "\n" + "Domicilio: " + domicilio);
+	                		}else{
+	                			alert("Selecciona una Colonia correctamente.");
+	                		}
+	                	}else{
+
+	                		alert("Selecciona una Delegación correctamente.")
+	                	}
+	                	}else{
+	                		alert("Completa correctamente la informacion.");
+	                	}
+	                }
+            	}
+                function Validaletra(a){
+                tecla = document.all ? a.keyCode : a.which;
+                if(tecla>=48 && tecla<=57||tecla>=123&&tecla<=160){
+                    return false;
+                }
+            }
+            function Validanum(a){
+                tecla = document.all  ? a.keyCode : a.which;
+                if((tecla>=33 && tecla<=47)||(tecla>=58 && tecla<=64)||(tecla>=91 && tecla<=126)){
+                    return false;
+                }
+            }
+			var demora;
+            var entero = 1;
+            var o = new Array("diez", "once", "doce", "trece", "catorce", "quince", "dieciséis", "diecisiete", "dieciocho", "diecinueve", "veinte", "veintiuno", "veintidos", "veintitres", "veinticuatro", "veinticinco", "veintiséis", "veintisiete", "veintiocho", "veintinueve");
+            var u = new Array("cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve");
+            var d = new Array("", "", "", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa");
+            var c = new Array("", "ciento", "doscientos", "trescientos", "cuatrocientos", "quinientos", "seiscientos", "setecientos", "ochocientos", "novecientos");
+           function nn(n)
+            {
+                var n = parseFloat(n).toFixed(2); /*se limita a dos decimales, no sabía que existía toFixed() :)*/
+                var p = n.toString().substring(n.toString().indexOf(".") + 1); /*decimales*/
+                var m = n.toString().substring(0, n.toString().indexOf(".")); /*número sin decimales*/
+                var m = parseFloat(m).toString().split("").reverse(); /*tampoco que reverse() existía :D*/
+                var t = "";
+
+                /*Se analiza cada 3 dígitos*/
+                for (var i = 0; i < m.length; i += 3)
+                {
+                    var x = t;
+                    /*formamos un número de 2 dígitos*/
+                    var b = m[i + 1] != undefined ? parseFloat(m[i + 1].toString() + m[i].toString()) : parseFloat(m[i].toString());
+                    /*analizamos el 3 dígito*/
+                    t = m[i + 2] != undefined ? (c[m[i + 2]] + " ") : "";
+                    t += b < 10 ? u[b] : (b < 30 ? o[b - 10] : (d[m[i + 1]] + (m[i] == '0' ? "" : (" y " + u[m[i]]))));
+                    t = t == "ciento cero" ? "cien" : t;
+                    if (2 < i && i < 6)
+                        t = t == "uno" ? "mil " : (t.replace("uno", "un") + " mil ");
+                    if (5 < i && i < 9)
+                        t = t == "uno" ? "un millón " : (t.replace("uno", "un") + " millones ");
+                    t += x;
+                    //t=i<3?t:(i<6?((t=="uno"?"mil ":(t+" mil "))+x):((t=="uno"?"un millón ":(t+" millones "))+x));
+                }
+
+                /*correcciones*/
+                t = t.replace("  ", " ");
+                t = t.replace(" cero", "");
+                t = t.replace("ciento y", "cien y");  
+                document.getElementById("costo").value = t;
+                return t;
+            }
+       </script>
+    </head>
+    <body style="float : left ; display : table; width: 100% ; height: 100%; background-color: orange">
+        <form  name="formulario" id="formu" onSubmit= "return Desplegar(this)" method="post" action="altas.jsp">
+	<div style =" float : left ; display : table; width: 100% ; height: 100%">
+        <div id="div1">
+              <h2 align="center"> Bienvenido</h2>
+                <hr size="5" width="75%" color="lawngreen">
+                <h2 id="nombresito">Nombre(s): </h2>
+                <input type="text"  name="nom" id="nombre" required onkeyPress="return Validaletra(event)"/>
+                <br>
+                <h2 id ="apell">Apellido(s): </h2>
+                <input type="text" name="ape" id="apellido" required onkeyPress="return Validaletra(event)"/>
+                <br>
+                <br>
+                <h2 id="r" >RFC: </h2>
+                <input type="text" id="rfc" name="r" required onkeyPress="return Validanum(event)"/>
+                <br>
+                <h2 id="con">Contraseña: </h2>
+                <input type="password" name="clave" id="clave" required="required"/>
+                <br>
+                <h2 id="s">Sexo</h2>
+                <input type="radio" name="sex" id="sex1" value="Femenino"/>
+                Femenino
+                <br>
+                <input type="radio" name="sex" id="sex2" value="Masculino"/>
+                Masculino
+                
+	</div>
+	<div id="div2">
+                <h2 id="fecha">Fecha de nacimiento</h2>
+                <input type="date" name="dia" id="dian" step="1" min="1900-01-01" max="2005-01-01" required/>
+                <br>
+                <h2 id="co">Correo: </h2>
+                <input type="email" name="meil" id="correo" required/>
+                <br>
+                <br>
+                <select name="D1" id="D1" onchange="cambiar(this.form)">
+                    <option>Delegacion:</option>
+                    <option>Álvaro Obregon</option>
+                    <option>Azcapotzalco</option>
+                    <option>Benito Juárez</option>
+                    <option>Cuajimalpa de Morelos</option>
+                    <option>Coyoacan</option>
+                    <option>Cuahtémoc</option>
+                    <option>Gustavo A. Madero</option>
+                    <option>Iztacalco</option>
+                    <option>Iztapalapa</option>
+                    <option>La Magdalena Contreras</option>
+                    <option>Miguel Hidalgo</option>
+                    <option>Milpa Alta</option>
+                    <option>Tláhuac</option>
+                    <option>Tlalpan</option>
+                    <option>Venustiano Carranza</option>
+                    <option>Xochimilco</option>
+                </select>
+                <select name="D2" id="D2">
+                    <option>----</option>
+                </select>
+                <br>
+                <h2 id="do">Domicilio: </h2>
+                <input type="text"  id="comment" name="comment">
+                
+                <br>
+                <h2 id="hola">Sueldo:</h2>
+		<input type="text" name="numero" id="num" maxlength="6" onkeyup="nn(document.getElementById('num').value);">
+		<br><br>
+		<h2 id="gola">Letras: </h2>
+		<input type="text" id="costo" name="letra" disabled="disabled" style="width: 400px"/>
+                <br><br>
+                <input type="submit" name="guardar" value="Dar de Alta">
+                <br><br>
+                
+            </div>
+	</div>
+        </form>
+        <form name="consultas" action="consultas.jsp" method="post">
+            <input type="text" id="busca1" name="busca">
+            <input type="submit" name="buscar" value="Buscar">
+        </form>
+        <form name="consultastodo" action="consultastodo.jsp" method="post">
+            <br><br>
+            <input type="submit" name="registro" value="Registros existentes">
+        </form>
+        <form name="consultass" action="consultitas.jsp" method="post">
+            <br><br>
+            <input type="submit" name="consulta" value="Desplegar">
+        </form>
+    </body>
+</html>
